@@ -43,7 +43,7 @@ function Noticias(){
         setLista(l);
     }
    
-    console.log(list);
+    
     return <>
         <header>
             <a href='https://fabio460.github.io/Portifolio/'><img src={logo} alt=''/></a>
