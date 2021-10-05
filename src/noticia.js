@@ -1,5 +1,5 @@
 import React from "react";
-import logo from './logo.svg'
+
 function Noticia({urlToImage,title,description,content,author}){
     return <>
         <div className='bloco_noticia'>

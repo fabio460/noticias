@@ -5,6 +5,10 @@ import logo from './logo.png';
 function Noticias(){
     const [list,setLista]=useState([]);
     const [texto,setTexto]=useState();
+     useEffect(async ()=>{
+        const l = await apiManchetes.get('noticias');
+         setLista(l);
+    },[]);
     const listar =async ()=>{
         const l = await apiManchetes.get(texto);
         setLista(l);
@@ -30,10 +34,7 @@ function Noticias(){
         const l = await apiManchetes.categoria('science','br');
         setLista(l);
     }
-    useEffect(async ()=>{
-        const l = await apiManchetes.get('noticias');
-        setLista(l);
-    },[texto]);
+   
     console.log(list);
     return <>
         <header>
