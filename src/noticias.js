@@ -5,9 +5,17 @@ import logo from './logo.png';
 function Noticias(){
     const [list,setLista]=useState([]);
     const [texto,setTexto]=useState();
-     useEffect(async ()=>{
-        const l = await apiManchetes.get('noticias');
-         setLista(l);
+     useEffect( ()=>{
+       // let l = await apiManchetes.get('noticias');
+        //setLista(l);
+        let endpoint='noticias'
+        async function fetchUser() {
+            const response = await fetch(`https://newsapi.org/v2/everything?q=${endpoint}&apiKey=ec1798daadd9421b82a4eb83f01de8c8`);
+            const json = await response.json();
+            const data=json.articles;
+            setLista(data);
+          }
+          fetchUser();
     },[]);
     const listar =async ()=>{
         const l = await apiManchetes.get(texto);
