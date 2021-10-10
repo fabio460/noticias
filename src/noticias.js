@@ -14,8 +14,8 @@ function Noticias(){
             const json = await response.json();
             const data=json.articles;
             setLista(data);
-            //const ibge = apiManchetes.ibge();
-            console.log(data)
+            const ibge = apiManchetes.ibge();
+            console.log(ibge)
           }
           fetchUser();
     },[]);
